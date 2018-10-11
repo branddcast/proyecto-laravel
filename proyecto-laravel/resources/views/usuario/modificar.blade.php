@@ -12,6 +12,7 @@
                 			</div>
                 		</div>
                 	</div>
+                        @foreach( $usuario as $usuario)
                 		<div class="card-body">	
                 			<div class="row justify-content-center mb-4">
                 				<div class="col-md-3 text-center">
@@ -31,7 +32,7 @@
                 					Apellido(s):
                 				</div>
                 				<div class="col-md-4">
-                					<span><b>{!! Auth::user()->ap_paterno !!} {!! Auth::user()->ap_materno !!}</b></span>
+                					<span><b>{!! $usuario->ap_paterno !!} {!! $usuario->ap_materno !!}</b></span>
                 				</div>
                 			</div>
                 			<div class="row justify-content-center">
@@ -50,6 +51,7 @@
 						</div>
 					</div>
 				</div>
+                        @endforeach
 			</div>
 		</div>
 	</div>
