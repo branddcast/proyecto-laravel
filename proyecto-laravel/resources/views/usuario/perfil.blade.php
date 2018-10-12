@@ -43,7 +43,7 @@
                 				</div>
                 			</div>
                 			<div class="row justify-content-center">
-                				<div class="col-md-4">
+                				<div class="col-md-4 text-center">
                 					<a class="btn btn-info" href="{{ route('modificar', Auth::user()->id) }}">Modificar</a>
                 				</div>
                 			</div>

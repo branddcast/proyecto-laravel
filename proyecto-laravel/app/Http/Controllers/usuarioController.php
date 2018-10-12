@@ -69,7 +69,12 @@ class usuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //$usuario = User::find($id)->get();
+
+        $usuario = User::update($request->all(), $id);
+
+        return view('usuario.perfil');
+
     }
 
     /**
