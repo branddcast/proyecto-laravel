@@ -19,6 +19,11 @@
                 				</div>
                 			</div>
                 			<div class="row justify-content-center">
+                                <div class="col-md-6">
+                					@include('flash::message')
+                				</div>
+                			</div>
+                			<div class="row justify-content-center">
                 				<div class="col-md-4 text-right">
                 					Nombre: 
                 				</div>
@@ -42,9 +47,9 @@
                 					<span><b>{!! Auth::user()->email !!}</b></span>
                 				</div>
                 			</div>
-                			<div class="row justify-content-center">
+                			<div class="row justify-content-center mt-4">
                 				<div class="col-md-4 text-center">
-                					<a class="btn btn-info" href="{{ route('modificar', Auth::user()->id) }}">Modificar</a>
+                					<a class="btn btn-info" href="{{ route('edit', Auth::user()->id) }}">Modificar</a>
                 				</div>
                 			</div>
 						</div>

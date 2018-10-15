@@ -12,14 +12,20 @@
                 			</div>
                 		</div>
                 	</div>
-                        <form method="post" action="{!! route('usuario.update') !!}">
                         @foreach( $usuario as $usuario)
+                        {!! Form::open(['url' => 'modificar/'.$usuario->id]) !!}
+                                <input type="hidden" name="remember_token" value="{{csrf_token()}}">
                 		<div class="card-body">	
                 			<div class="row justify-content-center mb-4">
                 				<div class="col-md-3 text-center">
                 					<img src="../src/user.png" width="80%" style="border-radius: 360px; background: #0E0031FF">
                 				</div>
                 			</div>
+                                        <div class="row justify-content-center">
+                                                <div class="col-md-6">
+                                                        @include('flash::message')
+                                                </div>
+                                        </div>
                 			<div class="row justify-content-center align-items-center">
                 				<div class="col-md-4 text-right ">
                 					<span>Nombre: </span>
@@ -85,6 +91,7 @@
 					</div>
 				</div>
                         @endforeach
+                        </form>
 			</div>
 		</div>
 	</div>

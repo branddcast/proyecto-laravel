@@ -20,6 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas Usuario
-Route::get('/perfil', 'UsuarioController@index');
-Route::get('/modificar/{id}', 'UsuarioController@modificar')->name('modificar');
-Route::post('update', ['as' => 'usuario.update', 'uses' => 'UsuarioController@update']);
+Route::get('/perfil', 'UsuarioController@index')->name('perfil');
+Route::get('/modificar/{id}', 'UsuarioController@edit')->name('edit');
+Route::post('/modificar/{id}', ['as' => 'usuario.update', 'uses' => 'UsuarioController@update']);
