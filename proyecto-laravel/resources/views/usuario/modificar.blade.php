@@ -1,6 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+    console.log($('#nombre').val());
+    console.log($('#email').val());
+
+    window.addEventListener("keypress", function(event){
+        if (event.keyCode == 13){
+            event.preventDefault();
+        }
+    }, false);
+
+
+    function validarNombre(){
+        var nombre = document.getElementById('nombre');
+
+        console.log(nombre.value);
+
+        if(nombre.value == ""){
+            alert("Campo vacío [nombre]. Es obligatorio.");
+        }
+    }
+
+    function validarEmail(){
+        var email  = document.getElementById('email');
+
+        console.log(email.value);
+        
+        if(email.value == ""){
+            alert("Campo vacío [email]. Es obligatorio.");
+        }
+    }
+
+
+</script>
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
@@ -31,7 +68,7 @@
                 					<span>Nombre: </span>
                 				</div>
                 				<div class="col-md-4">
-                					<input class="form-control" type="text" name="nombre" value="{!! $usuario->nombre !!}" >
+                					<input class="form-control" type="text" id="nombre" name="nombre" value="{!! $usuario->nombre !!}" onchange="javascript:validarNombre();" required>
                 				</div>
                 			</div>
                 			<div class="row justify-content-center align-items-center mt-2">
@@ -55,7 +92,7 @@
                 					Correo Electrónico:
                 				</div>
                 				<div class="col-md-4">
-                					<input class="form-control" type="text" name="email" value="{!! $usuario->email !!}">
+                					<input class="form-control" type="text" id="email" name="email" value="{!! $usuario->email !!}" onchange="javascript:validarEmail();" required>
                 				</div>
                 			</div>
                                         <div class="row justify-content-center align-items-center mt-2">
