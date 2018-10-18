@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		console.log("Nombre: " + $("#nombre").text());
+    	console.log("Email: " + $("#email").text());
+	</script>
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
@@ -30,7 +32,7 @@
                 					Nombre: 
                 				</div>
                 				<div class="col-md-4">
-                					<span><b>{!! Auth::user()->nombre !!}</b></span>
+                					<span id="nombre"><b>{!! Auth::user()->nombre !!}</b></span>
                 				</div>
                 			</div>
                 			<div class="row justify-content-center">
@@ -46,7 +48,7 @@
                 					Correo Electrónico:
                 				</div>
                 				<div class="col-md-4">
-                					<span><b>{!! Auth::user()->email !!}</b></span>
+                					<span id="email"><b>{!! Auth::user()->email !!}</b></span>
                 				</div>
                 			</div>
                 			<div class="row justify-content-center mt-4">

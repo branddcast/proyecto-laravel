@@ -2,12 +2,10 @@
 
 @section('content')
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
 <script type="text/javascript">
 
-    console.log($('#nombre').val());
-    console.log($('#email').val());
+    console.log("Nombre: " + $("#nombre").val());
+    console.log("Email: " + $("#email").val());
 
     window.addEventListener("keypress", function(event){
         if (event.keyCode == 13){
